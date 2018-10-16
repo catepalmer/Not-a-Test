@@ -9,3 +9,7 @@ export const getLatestUser = pipe(
   reverse,
   head
 )
+
+export function getSorted({ sortUsers }) {
+  return sortUsers
+}

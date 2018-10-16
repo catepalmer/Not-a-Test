@@ -1,6 +1,6 @@
 import { isNonEmptyString } from 'ramda-adjunct'
 
-import { initialState, USER_REGISTERED } from '../constants'
+import { initialState, SORT_USERS, USER_REGISTERED } from '../constants'
 
 export default function rootReducer(
   state = initialState,
@@ -12,6 +12,13 @@ export default function rootReducer(
         ? {
             ...state,
             users: [...state.users, payload.user]
+          }
+        : state
+    case SORT_USERS:
+      return payload.sortUsers
+        ? {
+            ...state,
+            sortUsers: payload.sortUsers
           }
         : state
     default:
